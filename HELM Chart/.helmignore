@@ -26,3 +26,4 @@
 .helmignore
 *.user
 *.tgz
+*.ps1
