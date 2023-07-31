@@ -1,0 +1,15 @@
+﻿# Create a persistent volume (PV) that points to the hosting system (kubernetes host) https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "sm-connector-to-teams.fullname" . }}
+  labels:
+    {{- include "sm-connector-to-teams.labels" . | nindent 4 }}
+spec:
+  storageClassName: {{ .Values.volume.storageClassName }}
+  capacity:
+    storage: {{ .Values.volume.capacity }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.volume.hostPath }}

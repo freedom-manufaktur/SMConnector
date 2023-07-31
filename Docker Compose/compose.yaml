@@ -1,0 +1,22 @@
+name: sm-connector-to-teams
+
+services: # https://docs.docker.com/compose/compose-file/05-services/
+  app:
+    image: "sm-connector-to-teams:${ImageTag}"
+    ports:
+      - "8000:80" # For public access, do not expose in SaaS environment!
+    volumes:
+      - app-data:/app/data
+    healthcheck: # https://docs.docker.com/compose/compose-file/05-services/#healthcheck
+      test: [ "CMD", "dotnet", "/app/SMConnectorToTeams.dll", "--healthcheck", "http://localhost/healthcheck" ]
+      interval: 1m # Takes 1 minute for the first check, and then every minute
+      timeout: 1m
+    environment:
+      - Api:EnableDetailedErrorMessages=${Api_EnableDetailedErrorMessages}
+      - Api:EnableSwagger=${Api_EnableSwagger}
+
+volumes: # https://docs.docker.com/compose/compose-file/07-volumes/
+  app-data:
+    driver: local # Use the Docker Desktop default https://docs.docker.com/compose/compose-file/07-volumes/#driver
+    # Inspect data here (Docker Desktop Windows):
+    # \\wsl$\docker-desktop-data\data\docker\volumes\sm-connector-to-teams_app-data\_data
