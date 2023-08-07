@@ -187,7 +187,9 @@ For example in Kubernetes Dashboard \
 1.  Follow the **Ticket2Teams** installation manual to install **Ticket2Teams** into your *USU Service Manager (USM)*.
 
 1.  Finish entering all the required settings into your **Ticket2Teams configuration** UI.
-    > Use the **API key** password that we generated earlier here.
+    > Use the **URL** and **API key** password that we generated earlier here.
+    
+    ![Ticket2Teams Configuration](Images/Ticket2Teams%20Configuration.png)
 
 3.  (Optional) Open a browser and enter the URL of **your** microservice and append `/healthcheck` \
     For example **`https://SMConnector.MyCompany.com/healthcheck`** \
