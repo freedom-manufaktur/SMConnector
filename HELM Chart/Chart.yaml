@@ -1,0 +1,17 @@
+# Make sure to fill out 'values.yaml' to properly set up the app.
+
+# https://helm.sh/docs/topics/charts/#the-chartyaml-file
+apiVersion: v2
+name: sm-connector-to-teams
+description: SMConnector2Teams by GentlemenGroup, powered by freedom manufaktur.
+
+# https://helm.sh/docs/topics/charts/#chart-types
+type: application
+
+# Version of this Chart - https://helm.sh/docs/topics/charts/#charts-and-versioning
+version: 1.8.0
+
+# The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field
+appVersion: "1.8.0" # or latest
+
+icon: https://static.freedom-manufaktur.com/sm-connector-to-teams-helm.svg

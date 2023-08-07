@@ -1,0 +1,14 @@
+﻿# Create a persistent volume claim (PVC) that exposes the PV to a pod https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "sm-connector-to-teams.fullname" . }}
+  labels:
+    {{- include "sm-connector-to-teams.labels" . | nindent 4 }}
+spec:
+  storageClassName: {{ .Values.volume.storageClassName }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.volume.capacity }}

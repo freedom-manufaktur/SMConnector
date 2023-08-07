@@ -1,0 +1,9 @@
+﻿apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "sm-connector-to-teams.fullname" . }}
+  labels:
+    {{- include "sm-connector-to-teams.labels" . | nindent 4 }}
+data:
+  Api.EnableDetailedErrorMessages: {{ .Values.config.Api.EnableDetailedErrorMessages | quote }}
+  Api.EnableSwagger: {{ .Values.config.Api.EnableSwagger | quote }}
