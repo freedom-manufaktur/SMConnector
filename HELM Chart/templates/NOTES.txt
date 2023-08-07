@@ -1,7 +1,7 @@
 ﻿1. First time setup
   When you install the application for the first time, it will NOT be considered healthy.
   You must first configure the app via its configuration API. This is typically done via the Ticket2Teams configuration UI.
-  To access the API you do need an API token, which you can aquire from the logs.
+  To access the API you do need an API key, which you can aquire from the logs.
 
   # Bash-only
   export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "sm-connector-to-teams.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
