@@ -9,9 +9,9 @@ description: SMConnector2Teams by GentlemenGroup, powered by freedom manufaktur.
 type: application
 
 # Version of this Chart - https://helm.sh/docs/topics/charts/#charts-and-versioning
-version: 1.8.0
+version: 1.13.2
 
 # The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field
-appVersion: "1.8.0" # or latest
+appVersion: "1.13.2" # or latest
 
 icon: https://static.freedom-manufaktur.com/sm-connector-to-teams-helm.svg

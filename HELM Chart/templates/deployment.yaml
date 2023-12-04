@@ -32,6 +32,15 @@ spec:
         - name: {{ include "sm-connector-to-teams.fullname" . }}
           persistentVolumeClaim:
             claimName: {{ include "sm-connector-to-teams.fullname" . }}
+      initContainers:
+        - name: init-{{ .Chart.Name }} # We allocate a directory and change the owner to "app" as a template for the actual volume mount.
+          image: busybox:1.36.1-musl
+          imagePullPolicy: IfNotPresent
+          command:
+            - bash
+            - -c
+            - mkdir -p /app/data
+            - chown -R 1654:1654 /app/data
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
