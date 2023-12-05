@@ -37,7 +37,7 @@ spec:
           image: busybox:1.36.1-musl
           imagePullPolicy: IfNotPresent
           command:
-            - bash
+            - sh
             - -c
             - mkdir -p /app/data
             - chown -R 1654:1654 /app/data
