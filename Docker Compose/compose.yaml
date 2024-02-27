@@ -1,13 +1,14 @@
 name: sm-connector-to-teams
 
 services: # https://docs.docker.com/compose/compose-file/05-services/
-  init-app: # We allocate a directory and change the owner to "app" as a template for the actual volume mount.
+  init-app: # We change the owner of the "app-data" volume mount from "root" to "app" (1654) to enable writing to that volumne (Docker v25.0.3).
     image: busybox:1.36.1-musl
+    volumes:
+      - app-data:/app/data
     command:
       - sh
       - -c
-      - mkdir -p /app/data
-      - chown -R 1654:1654 /app/data
+      - chown -R -c 1654:1654 /app/data # https://busybox.net/downloads/BusyBox.html#chown
   app:
     depends_on:
       init-app:
@@ -18,9 +19,7 @@ services: # https://docs.docker.com/compose/compose-file/05-services/
     volumes:
       - app-data:/app/data
     healthcheck: # https://docs.docker.com/compose/compose-file/05-services/#healthcheck
-      test: [ "CMD", "dotnet", "/app/SMConnectorToTeams.dll", "--healthcheck", "http://localhost/healthcheck" ]
-      interval: 1m # Takes 1 minute for the first check, and then every minute
-      timeout: 1m
+      test: [ "CMD", "app/SMConnectorToTeams", "--healthcheck", "http://localhost:8080/livenesscheck" ]
     environment:
       - Api:EnableDetailedErrorMessages=${Api_EnableDetailedErrorMessages}
       - Api:EnableSwagger=${Api_EnableSwagger}

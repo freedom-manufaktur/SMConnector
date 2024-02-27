@@ -1,6 +1,6 @@
 ﻿SMConnector2Teams - Microservice Installation Manual
 ---
-Version: `1.13.2` - `2023-12-04` \
+Version: `1.14.0` - `2024-02-27` \
 Author: martin@freedom-manufaktur.com \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector2Teams/tree/main/Documentation/Microservice%20Installation%20Manual.md)
 
@@ -42,7 +42,7 @@ There are different kinds of installation. You may choose the one best suiting y
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector2Teams Setup 1.13.2`
+1.	Install `SMConnector2Teams Setup 1.14.0`
     > Note: This will automatically install .NET 8.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
@@ -105,7 +105,7 @@ The installation also creates a new Windows Event Log source `SMConnector2Teams`
 ## Installation as Docker Container via Docker Compose
 
 > Attention: Starting with version 1.12.0 of `SMConnector2Teams` the docker images are **non-root** based.
-> You **should** use `SMConnector2Teams` version 1.13.2 or later combined with `compose.yaml` version 1.13.2 or later.
+> You **should** use `SMConnector2Teams` version 1.14.0 or later combined with `compose.yaml` version 1.14.0 or later.
 
 **Installation and Configuration**
 
@@ -144,7 +144,7 @@ For example in Docker Desktop \
 ## Installation as Kubernetes Deployment via HELM Chart
 
 > Attention: Starting with version 1.12.0 of `SMConnector2Teams` the docker images are **non-root** based.
-> You **should** use `SMConnector2Teams` version 1.13.2 or later combined with `Chart.yaml` version 1.13.2 or later.
+> You **should** use `SMConnector2Teams` version 1.14.0 or later combined with `Chart.yaml` version 1.14.0 or later.
 
 **Installation and Configuration**
 
