@@ -12,6 +12,12 @@ Table of contents
   - [Installation as Docker Container via Docker Compose](#installation-as-docker-container-via-docker-compose)
   - [Installation as Kubernetes Deployment via HELM Chart](#installation-as-kubernetes-deployment-via-helm-chart)
 - [2. Install Ticket2Teams](#2-install-ticket2teams)
+- [What's new?](#whats-new)
+  - [\[1.14.0\] - 2024-02-27](#1140---2024-02-27)
+    - [Changed](#changed)
+    - [Fixed](#fixed)
+  - [\[1.12.0\] - 2023-12-01](#1120---2023-12-01)
+    - [Changed](#changed-1)
 - [Need support?](#need-support)
 <!--/TOC-->
 
@@ -222,6 +228,22 @@ For example in Kubernetes Dashboard \
 
 4.  Done!
     > Congratulations on successfully installing and configuring the **SMConnector2Teams**.
+
+# What's new?
+This section lists **important** changes to the documentation and Docker files.
+Please read this list when upgrading an existing installation.
+> The full app changelog can be found in the [SMConnector2Teams Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR)
+
+## [1.14.0] - 2024-02-27
+### Changed
+- *Docker Compose* container initialization was updated for Docker v25.0
+
+### Fixed
+- The *Docker Compose* healthcheck was fixed (regression from 1.12.0).
+
+## [1.12.0] - 2023-12-01
+### Changed
+- *Docker Compose* and *HELM Chart* have been updated for running as **non-root** container. This includes a port number change.
 
 # Need support?
 If you have any questions regarding the installation and configuration of the SMConnector2Teams, contact us at
