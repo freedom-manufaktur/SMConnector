@@ -246,10 +246,10 @@ Please read this list when upgrading an existing installation.
 - *Docker Compose* and *HELM Chart* have been updated for running as **non-root** container. This includes a port number change.
 
 # Need support?
-If you have any questions regarding the installation and configuration of the SMConnector2Teams, contact us at
-* All questions regarding the *Ticket2Teams* \
-    support@gentlemengroup.de (Gentlemen Group)
-* All questions around the *SMConnector2Teams* microservice \
-    support@freedom-manufaktur.com (freedom manufaktur)
+If you have any questions regarding the installation or configuration of the *SMConnector*, contact us at
+* All questions regarding *Ticket2Teams* or *Ticket2Webex* \
+  support@gentlemengroup.de (Gentlemen Group)
+* All questions around the *SMConnector* microservice \
+  support@freedom-manufaktur.com (freedom manufaktur)
 * All questions regarding the *USU Service Manager* itself \
-    support@usu.com (USU)
+  support@usu.com (USU)
