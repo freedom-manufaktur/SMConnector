@@ -1,4 +1,4 @@
-name: sm-connector-to-teams
+name: sm-connector
 
 services: # https://docs.docker.com/compose/compose-file/05-services/
   init-app: # We change the owner of the "app-data" volume mount from "root" to "app" (1654) to enable writing to that volumne (Docker v25.0.3).
@@ -13,13 +13,13 @@ services: # https://docs.docker.com/compose/compose-file/05-services/
     depends_on:
       init-app:
         condition: service_completed_successfully
-    image: "sm-connector-to-teams:${ImageTag}"
+    image: "sm-connector:${ImageTag}"
     ports:
       - "${PublicPort}:8080"
     volumes:
       - app-data:/app/data
     healthcheck: # https://docs.docker.com/compose/compose-file/05-services/#healthcheck
-      test: [ "CMD", "app/SMConnectorToTeams", "--healthcheck", "http://localhost:8080/livenesscheck" ]
+      test: [ "CMD", "/app/SMConnector", "--healthcheck", "http://localhost:8080/livenesscheck" ]
     environment:
       - Api:EnableDetailedErrorMessages=${Api_EnableDetailedErrorMessages}
       - Api:EnableSwagger=${Api_EnableSwagger}
@@ -28,4 +28,4 @@ volumes: # https://docs.docker.com/compose/compose-file/07-volumes/
   app-data:
     driver: local # Use the Docker Desktop default https://docs.docker.com/compose/compose-file/07-volumes/#driver
     # Inspect data here (Docker Desktop Windows):
-    # \\wsl$\docker-desktop-data\data\docker\volumes\sm-connector-to-teams_app-data\_data
+    # \\wsl$\docker-desktop-data\data\docker\volumes\sm-connector_app-data\_data

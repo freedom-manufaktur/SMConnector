@@ -2,7 +2,7 @@
 
 # https://helm.sh/docs/topics/charts/#the-chartyaml-file
 apiVersion: v2
-name: sm-connector-to-teams
+name: sm-connector
 description: SMConnector2Teams by GentlemenGroup, powered by freedom manufaktur.
 
 # https://helm.sh/docs/topics/charts/#chart-types
@@ -14,4 +14,4 @@ version: 1.14.0
 # The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field
 appVersion: "1.14.0" # or latest
 
-icon: https://static.freedom-manufaktur.com/sm-connector-to-teams-helm.svg
+icon: https://static.freedom-manufaktur.com/sm-connector-helm.svg

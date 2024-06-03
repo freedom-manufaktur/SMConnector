@@ -16,4 +16,4 @@ helm test sm-connector
 
 #              ReleaseName
 helm uninstall sm-connector
-kubectl delete -n default pod sm-connector-sm-connector-to-teams-test-connection
+kubectl delete -n default pod sm-connector-sm-connector-test-connection
