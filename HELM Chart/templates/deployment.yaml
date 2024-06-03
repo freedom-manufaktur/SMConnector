@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "sm-connector-to-teams.fullname" . }}
+  name: {{ include "sm-connector.fullname" . }}
   labels:
-    {{- include "sm-connector-to-teams.labels" . | nindent 4 }}
+    {{- include "sm-connector.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "sm-connector-to-teams.selectorLabels" . | nindent 6 }}
+      {{- include "sm-connector.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
@@ -19,19 +19,19 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "sm-connector-to-teams.selectorLabels" . | nindent 8 }}
+        {{- include "sm-connector.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "sm-connector-to-teams.serviceAccountName" . }}
+      serviceAccountName: {{ include "sm-connector.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-        - name: {{ include "sm-connector-to-teams.fullname" . }}
+        - name: {{ include "sm-connector.fullname" . }}
           persistentVolumeClaim:
-            claimName: {{ include "sm-connector-to-teams.fullname" . }}
+            claimName: {{ include "sm-connector.fullname" . }}
       initContainers:
         - name: init-{{ .Chart.Name }} # We allocate a directory and change the owner to "app" as a template for the actual volume mount.
           image: busybox:1.36.1-musl
@@ -53,7 +53,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - mountPath: "/app/data"
-              name: {{ include "sm-connector-to-teams.fullname" . }}
+              name: {{ include "sm-connector.fullname" . }}
           livenessProbe:
             httpGet:
               path: /livenesscheck
@@ -71,12 +71,12 @@ spec:
             - name: Api__EnableDetailedErrorMessages
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "sm-connector-to-teams.fullname" . }}
+                  name: {{ include "sm-connector.fullname" . }}
                   key: Api.EnableDetailedErrorMessages
             - name: Api__EnableSwagger
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "sm-connector-to-teams.fullname" . }}
+                  name: {{ include "sm-connector.fullname" . }}
                   key: Api.EnableSwagger
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

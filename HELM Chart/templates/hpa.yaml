@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "sm-connector-to-teams.fullname" . }}
+  name: {{ include "sm-connector.fullname" . }}
   labels:
-    {{- include "sm-connector-to-teams.labels" . | nindent 4 }}
+    {{- include "sm-connector.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "sm-connector-to-teams.fullname" . }}
+    name: {{ include "sm-connector.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
