@@ -1,6 +1,6 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.1.1` - `2024-06-03` \
+Version: `2.1.2` - `2024-06-03` \
 Author: martin@freedom-manufaktur.com \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Microservice%20Installation%20Manual.md)
 
@@ -50,7 +50,7 @@ There are different kinds of installation. You may choose the one best suiting y
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 1.14.0`
+1.	Install `SMConnector Setup 2.1.2`
     > Note: This will automatically install .NET 8.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
