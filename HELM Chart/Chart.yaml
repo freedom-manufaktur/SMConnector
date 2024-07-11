@@ -3,7 +3,7 @@
 # https://helm.sh/docs/topics/charts/#the-chartyaml-file
 apiVersion: v2
 name: sm-connector
-description: SMConnector2Teams by GentlemenGroup, powered by freedom manufaktur.
+description: SMConnector by GentlemenGroup, powered by freedom manufaktur.
 
 # https://helm.sh/docs/topics/charts/#chart-types
 type: application
