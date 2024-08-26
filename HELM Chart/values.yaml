@@ -1,28 +1,51 @@
 # Default values for sm-connector.
-#
-# Use this file to configure your app or use a second config file:
-# helm upgrade release-name . --install --values values.yaml --values values.customer.yaml
-# After install test the app with:
-# helm test release-name
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
 
-config:
-  Api:
-    EnableDetailedErrorMessages: false
-    EnableSwagger: false
-
-volume:
-  storageClassName: manual
-  capacity: 1Gi
-  # Windows Docker Desktop Kubernetes (1.28.2):
-  # C:\sm-connector-data -> /run/desktop/mnt/host/c/sm-connector-data
-  hostPath: /run/desktop/mnt/host/c/sm-connector-data
+replicaCount: 1
 
 image:
   repository: sm-connector
   pullPolicy: IfNotPresent
-  tag: "" # Overrides the image tag whose default is the chart appVersion.
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+config:
+  Api:
+    # Enable to include the full stack trace when an error occurs while calling the API.
+    EnableDetailedErrorMessages: false
+    EnableSwagger: false
 
 imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext:
+  runAsNonRoot: false # we need root to configure the Persistent Volume (PV)
+  # fsGroup: 2000
+
+securityContext:
+  runAsNonRoot: true # Our app runs as non-root user "app" (ID: 1654)
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
 
 service:
   type: ClusterIP
@@ -44,34 +67,6 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-replicaCount: 1
-nameOverride: ""
-fullnameOverride: ""
-
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Annotations to add to the service account
-  annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: ""
-
-podAnnotations: {}
-
-podSecurityContext:
-  runAsNonRoot: false # we need root to configure the Persistent Volume (PV)
-  # fsGroup: 2000
-
-securityContext:
-  runAsNonRoot: true # Our app runs as non-root user "app" (ID: 1654)
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
-
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -84,12 +79,45 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+livenessProbe:
+  httpGet:
+    path: /livenesscheck
+    port: http
+  periodSeconds: 10
+  timeoutSeconds: 1
+readinessProbe:
+  httpGet:
+    path: /healthcheck
+    port: http
+  initialDelaySeconds: 3
+  periodSeconds: 60
+  timeoutSeconds: 60
+
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
+
+# Additional volumes on the output Deployment definition.
+volumes:
+- name: sm-connector-data
+  persistentVolumeClaim:
+    claimName: sm-connector
+
+volume:
+  storageClassName: manual
+  capacity: 1Gi
+  # Windows Docker Desktop Kubernetes (1.30.2):
+  # C:\sm-connector-data -> /run/desktop/mnt/host/c/sm-connector-data
+  hostPath: /run/desktop/mnt/host/c/sm-connector-data
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+- name: sm-connector-data
+  mountPath: "/app/data"
+  readOnly: false
 
 nodeSelector: {}
 

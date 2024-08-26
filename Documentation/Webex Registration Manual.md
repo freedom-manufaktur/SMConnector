@@ -1,6 +1,6 @@
 ﻿SMConnector - Webex Registration Manual
 ---
-Version: `2.1.2` - `2024-06-03` \
+Version: `2.1.3` - `2024-06-03` \
 Author: martin@freedom-manufaktur.com \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Webex%20Registration%20Manual.md)
 

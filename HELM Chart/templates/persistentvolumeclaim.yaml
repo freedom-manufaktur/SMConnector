@@ -1,4 +1,5 @@
-﻿# Create a persistent volume claim (PVC) that exposes the PV to a pod https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+﻿# Create a persistent volume claim (PVC) that exposes the PV to a pod
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,7 +9,7 @@ metadata:
 spec:
   storageClassName: {{ .Values.volume.storageClassName }}
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteOnce # the volume can be mounted as read-write by a single node. ReadWriteOnce access mode still can allow multiple pods to access the volume when the pods are running on the same node. For single pod access, please see ReadWriteOncePod.
   resources:
     requests:
       storage: {{ .Values.volume.capacity }}

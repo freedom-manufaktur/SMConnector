@@ -9,9 +9,9 @@ description: SMConnector by GentlemenGroup, powered by freedom manufaktur.
 type: application
 
 # Version of this Chart - https://helm.sh/docs/topics/charts/#charts-and-versioning
-version: 2.1.2
+version: 2.1.3
 
 # The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field
-appVersion: "2.1.2" # or latest
+appVersion: "2.1.3" # or latest
 
 icon: https://static.freedom-manufaktur.com/sm-connector-helm.svg
