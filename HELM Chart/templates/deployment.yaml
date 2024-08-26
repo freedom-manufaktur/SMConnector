@@ -13,13 +13,15 @@ spec:
       {{- include "sm-connector.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       {{- with .Values.podAnnotations }}
+      annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "sm-connector.selectorLabels" . | nindent 8 }}
+        {{- include "sm-connector.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -28,10 +30,6 @@ spec:
       serviceAccountName: {{ include "sm-connector.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      volumes:
-        - name: {{ include "sm-connector.fullname" . }}
-          persistentVolumeClaim:
-            claimName: {{ include "sm-connector.fullname" . }}
       initContainers:
         - name: init-{{ .Chart.Name }} # We allocate a directory and change the owner to "app" as a template for the actual volume mount.
           image: busybox:1.36.1-musl
@@ -39,8 +37,11 @@ spec:
           command:
             - sh
             - -c
-            - mkdir -p /app/data
-            - chown -R 1654:1654 /app/data
+            - chown -R -c 1654:1654 /app/data # https://busybox.net/downloads/BusyBox.html#chown
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -51,22 +52,10 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          volumeMounts:
-            - mountPath: "/app/data"
-              name: {{ include "sm-connector.fullname" . }}
           livenessProbe:
-            httpGet:
-              path: /livenesscheck
-              port: http
-            periodSeconds: 10
-            timeoutSeconds: 1
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
-            httpGet:
-              path: /healthcheck
-              port: http
-            initialDelaySeconds: 3
-            periodSeconds: 60
-            timeoutSeconds: 60
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
           env:
             - name: Api__EnableDetailedErrorMessages
               valueFrom:
@@ -80,6 +69,14 @@ spec:
                   key: Api.EnableSwagger
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -1,6 +1,6 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.1.2` - `2024-06-03` \
+Version: `2.1.3` - `2024-08-26` \
 Author: martin@freedom-manufaktur.com \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Microservice%20Installation%20Manual.md)
 
@@ -13,13 +13,15 @@ Table of contents
   - [Installation as Kubernetes Deployment via HELM Chart](#installation-as-kubernetes-deployment-via-helm-chart)
 - [2. Install Ticket2Teams for USU Service Manager (USM)](#2-install-ticket2teams-for-usu-service-manager-usm)
 - [What's new?](#whats-new)
-  - [\[2.0.0\] - 2024-06-03](#200---2024-06-03)
+  - [\[2.1.3\] - 2024-08-26](#213---2024-08-26)
     - [Changed](#changed)
-  - [\[1.14.0\] - 2024-02-27](#1140---2024-02-27)
+  - [\[2.0.0\] - 2024-06-03](#200---2024-06-03)
     - [Changed](#changed-1)
+  - [\[1.14.0\] - 2024-02-27](#1140---2024-02-27)
+    - [Changed](#changed-2)
     - [Fixed](#fixed)
   - [\[1.12.0\] - 2023-12-01](#1120---2023-12-01)
-    - [Changed](#changed-2)
+    - [Changed](#changed-3)
 - [Need support?](#need-support)
 <!--/TOC-->
 
@@ -50,7 +52,7 @@ There are different kinds of installation. You may choose the one best suiting y
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 2.1.2`
+1.	Install `SMConnector Setup 2.1.3`
     > Note: This will automatically install .NET 8.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
@@ -226,6 +228,10 @@ For example in Kubernetes Dashboard \
 This section lists **important** changes to the documentation and Docker files.
 Please read this list when upgrading an existing installation.
 > The full app changelog can be found in the [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR)
+
+## [2.1.3] - 2024-08-26
+### Changed
+- *HELM Chart* has been updated for *HELM 3.15.4* and *Kubernetes 1.30.2*
 
 ## [2.0.0] - 2024-06-03
 ### Changed
