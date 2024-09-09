@@ -35,7 +35,7 @@ sure you only expose the information as much as needed for the Integration to wo
     - `Chat.Create` (Delegated)\
       Allows the App to create new chats.
     - `Chat.ReadWrite` (Delegated)\
-    Allows the App to get information about a chat and change a chats topic
+    Allows the App to get information about a chat and change a chats topic.
     - `ChatMember.ReadWrite` (Delegated)\
     Add and remove members to/from the chat.
     - `ChatMessage.Read` (Delegated)\
