@@ -1,8 +1,8 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.1.3` - `2024-08-26` \
+Version: `2.1.3` - `2024-09-09` \
 Author: martin@freedom-manufaktur.com \
-Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Microservice%20Installation%20Manual.md)
+Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector%20Installation%20Manual.md)
 
 Table of contents
 ---
@@ -11,7 +11,8 @@ Table of contents
   - [Installation as Windows Service](#installation-as-windows-service)
   - [Installation as Docker Container via Docker Compose](#installation-as-docker-container-via-docker-compose)
   - [Installation as Kubernetes Deployment via HELM Chart](#installation-as-kubernetes-deployment-via-helm-chart)
-- [2. Install Ticket2Teams for USU Service Manager (USM)](#2-install-ticket2teams-for-usu-service-manager-usm)
+- [2. Register an App with Teams/Webex](#2-register-an-app-with-teamswebex)
+- [3. Install Ticket2Teams for USU Service Manager (USM)](#3-install-ticket2teams-for-usu-service-manager-usm)
 - [What's new?](#whats-new)
   - [\[2.1.3\] - 2024-08-26](#213---2024-08-26)
     - [Changed](#changed)
@@ -27,16 +28,16 @@ Table of contents
 
 # 1. Microservice Installation
 There are different kinds of installation. You may choose the one best suiting your needs.
-* Windows Service \
+- Windows Service \
    ✔ lightweight \
    ✔ easy to install, update and configure \
    ⚠ Windows only \
    ℹ .NET required (installed automatically)
-* Docker Container via Docker Compose \
+- Docker Container via Docker Compose \
    ✔ containerized \
    ✔ cross platform \
    ⚠ Docker with [Docker Compose v2](https://docs.docker.com/compose/) required
-* Kubernetes Deployment via [HELM Chart](https://helm.sh/) \
+- Kubernetes Deployment via [HELM Chart](https://helm.sh/) \
    ✔ containerized \
    ✔ scalable \
    ✔ cross platform \
@@ -52,7 +53,7 @@ There are different kinds of installation. You may choose the one best suiting y
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 2.1.3`
+1.	Install `SMConnector Setup 2.1.3.exe`
     > Note: This will automatically install .NET 8.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
@@ -60,12 +61,12 @@ There are different kinds of installation. You may choose the one best suiting y
     `Welcome to the SMConnector Microservice`
 1.	Allow inbound traffic to the service.
     > The default port used is `8000`. You may change the port number at any time.
-    * Use a Reverse Proxy, like IIS [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) to redirect traffic to port `8000`.
+    - Use a Reverse Proxy, like IIS [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) to redirect traffic to port `8000`.
         > This is the **recommended** option, as you can perform TLS/SSL termination before hitting the service and running the service in combination with other apps.
 
-    *OR*
+    **OR**
 
-    * Configure your Windows Firewall to allow inbound traffic to port `8000`
+    - Configure your Windows Firewall to allow inbound traffic to port `8000`
         > Note: You must bind a certificate to this port and use TLS/SSL (see *Configuration*).
 
 1.  As a result of the previous steps you should have a publically accessible and TLS secured endpoint like **https://SMConnector.MyCompany.com**. \
@@ -202,10 +203,15 @@ Use your favorite Docker tools to check the status and logs of the app.
 For example in Kubernetes Dashboard \
 ![Docker Kubernetes Running](Images/Kubernetes%20Running.png)
 
-# 2. Install Ticket2Teams for USU Service Manager (USM)
+# 2. Register an App with Teams/Webex
+Depending on your environment, read either of the following documents:
+- [Teams Registration Manual](Teams%20Registration%20Manual.md)
+- [Webex Registration Manual](Webex%20Registration%20Manual.md)
+
+# 3. Install Ticket2Teams for USU Service Manager (USM)
 1.  Follow the **Ticket2Teams** installation manual to install **Ticket2Teams** into your *USU Service Manager (USM)*.
 
-1.  Finish entering all the required settings into your **Ticket2Teams configuration** UI.
+2.  Finish entering all the required settings into your **Ticket2Teams configuration** UI.
     > Use the **URL** and **API key** password that we generated earlier here.
     
     ![Ticket2Teams Configuration](Images/Ticket2Teams%20Configuration.png)
@@ -251,9 +257,9 @@ Please read this list when upgrading an existing installation.
 
 # Need support?
 If you have any questions regarding the installation or configuration of the *SMConnector*, contact us at
-* All questions regarding *Ticket2Teams* or *Ticket2Webex* \
+- All questions regarding *Ticket2Teams* or *Ticket2Webex* \
   support@gentlemengroup.de (Gentlemen Group)
-* All questions around the *SMConnector* microservice \
+- All questions around the *SMConnector* microservice \
   support@freedom-manufaktur.com (freedom manufaktur)
-* All questions regarding the *USU Service Manager* itself \
+- All questions regarding the *USU Service Manager* itself \
   support@usu.com (USU)
