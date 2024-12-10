@@ -124,3 +124,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+## @param extraEnvVars Array to add extra environment variables
+##
+extraEnvVars: []
