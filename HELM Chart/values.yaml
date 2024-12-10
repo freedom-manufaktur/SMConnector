@@ -107,6 +107,7 @@ volumes:
     claimName: sm-connector
 
 volume:
+  volumeEnabled: true
   storageClassName: manual
   capacity: 1Gi
   # Windows Docker Desktop Kubernetes (1.30.2):
