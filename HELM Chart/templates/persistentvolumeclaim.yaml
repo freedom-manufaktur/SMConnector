@@ -7,7 +7,9 @@ metadata:
   labels:
     {{- include "sm-connector.labels" . | nindent 4 }}
 spec:
+  {{- if .Values.volume.storageClassName }}
   storageClassName: {{ .Values.volume.storageClassName }}
+  {{- end }}
   accessModes:
     - ReadWriteOnce # the volume can be mounted as read-write by a single node. ReadWriteOnce access mode still can allow multiple pods to access the volume when the pods are running on the same node. For single pod access, please see ReadWriteOncePod.
   resources:
