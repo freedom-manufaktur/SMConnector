@@ -126,7 +126,7 @@ volume:
   volumeEnabled: true
   storageClassName: manual
   capacity: 1Gi
-  # Windows Docker Desktop Kubernetes (1.30.2):
+  # Windows Docker Desktop Kubernetes (1.32.2):
   # C:\sm-connector-data -> /run/desktop/mnt/host/c/sm-connector-data
   hostPath: /run/desktop/mnt/host/c/sm-connector-data
 
