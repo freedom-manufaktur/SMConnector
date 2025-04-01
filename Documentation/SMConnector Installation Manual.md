@@ -1,7 +1,7 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.1.3` - `2024-09-09` \
-Author: martin@freedom-manufaktur.com \
+Version: `2.3.0` - `2024-10-28` \
+Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector%20Installation%20Manual.md)
 
 Table of contents
@@ -53,7 +53,7 @@ There are different kinds of installation. You may choose the one best suiting y
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 2.1.3.exe`
+1.	Install `SMConnector Setup 2.3.0.exe`
     > Note: This will automatically install .NET 8.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
@@ -258,8 +258,8 @@ Please read this list when upgrading an existing installation.
 # Need support?
 If you have any questions regarding the installation or configuration of the *SMConnector*, contact us at
 - All questions regarding *Ticket2Teams* or *Ticket2Webex* \
-  support@gentlemengroup.de (Gentlemen Group)
+  [services@gentlehuman.de](mailto:services@gentlehuman.de) (Gentlehuman Factory)
 - All questions around the *SMConnector* microservice \
-  support@freedom-manufaktur.com (freedom manufaktur)
+  [support@freedom-manufaktur.com](mailto:support@freedom-manufaktur.com) (freedom manufaktur)
 - All questions regarding the *USU Service Manager* itself \
-  support@usu.com (USU)
+  [support@usu.com](mailto:support@usu.com) (USU)
