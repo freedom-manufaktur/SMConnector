@@ -1,7 +1,7 @@
 ﻿SMConnector - Webex Registration Manual
 ---
-Version: `2.1.3` - `2024-06-03` \
-Author: martin@freedom-manufaktur.com \
+Version: `2.3.0` - `2024-10-28` \
+Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Webex%20Registration%20Manual.md)
 
 Table of contents
@@ -64,7 +64,7 @@ This is everything you need to configure your *SMConnector* for *Webex*.
 
 # Need support?
 If you have any questions regarding the installation or configuration of the *SMConnector*, contact us at
-* All questions regarding *Ticket2Teams* or *Ticket2Webex* \
-  support@gentlemengroup.de (Gentlemen Group)
-* All questions around the *SMConnector* microservice \
-  support@freedom-manufaktur.com (freedom manufaktur)
+- All questions regarding *Ticket2Teams* or *Ticket2Webex* \
+  [services@gentlehuman.de](mailto:services@gentlehuman.de) (Gentlehuman Factory)
+- All questions around the *SMConnector* microservice \
+  [support@freedom-manufaktur.com](mailto:support@freedom-manufaktur.com) (freedom manufaktur)
