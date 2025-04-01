@@ -1,5 +1,6 @@
 ﻿# Create a persistent volume (PV) that points to the hosting system (kubernetes host)
 # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
+{{- if .Values.volume.volumeEnabled -}}
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -14,3 +15,4 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: {{ .Values.volume.hostPath }}
+{{- end -}}
