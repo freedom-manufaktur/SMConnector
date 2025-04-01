@@ -1,15 +1,14 @@
-﻿# Make sure to fill out 'values.yaml' to properly set up the app.
-
-# https://helm.sh/docs/topics/charts/#the-chartyaml-file
-apiVersion: v2
+﻿apiVersion: v2 # https://helm.sh/docs/topics/charts/#the-chartyaml-file
 name: sm-connector
 description: SMConnector by freedom manufaktur.
 
 # https://helm.sh/docs/topics/charts/#chart-types
 type: application
 
-# Note: This version (version/appVersion) is NOT updated automatically.
-# Please use the most recent version available at https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR
+# Note 1: Make sure to fill out 'values.yaml' to properly set up the app.
+# Note 2: 'version'/'appVersion' is NOT updated automatically.
+#         Please use the most recent version available at https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR
+
 # Version of this Chart - https://helm.sh/docs/topics/charts/#charts-and-versioning
 version: 2.3.0
 # The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field

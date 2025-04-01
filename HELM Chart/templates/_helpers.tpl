@@ -1,4 +1,4 @@
-{{/*
+﻿{{/*
 Expand the name of the chart.
 */}}
 {{- define "sm-connector.name" -}}

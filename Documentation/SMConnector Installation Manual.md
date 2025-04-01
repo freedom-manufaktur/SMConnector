@@ -1,6 +1,6 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.3.0` - `2024-10-28` \
+Version: `2.3.0` - `2025-04-01` \
 Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector%20Installation%20Manual.md)
 
@@ -14,15 +14,11 @@ Table of contents
 - [2. Register an App with Teams/Webex](#2-register-an-app-with-teamswebex)
 - [3. Install Ticket2Teams for USU Service Manager (USM)](#3-install-ticket2teams-for-usu-service-manager-usm)
 - [What's new?](#whats-new)
+  - [\[2.3.0\] - 2025-04-01](#230---2025-04-01)
   - [\[2.1.3\] - 2024-08-26](#213---2024-08-26)
-    - [Changed](#changed)
   - [\[2.0.0\] - 2024-06-03](#200---2024-06-03)
-    - [Changed](#changed-1)
   - [\[1.14.0\] - 2024-02-27](#1140---2024-02-27)
-    - [Changed](#changed-2)
-    - [Fixed](#fixed)
   - [\[1.12.0\] - 2023-12-01](#1120---2023-12-01)
-    - [Changed](#changed-3)
 - [Need support?](#need-support)
 <!--/TOC-->
 
@@ -235,24 +231,21 @@ This section lists **important** changes to the documentation and Docker files.
 Please read this list when upgrading an existing installation.
 > The full app changelog can be found in the [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR)
 
+## [2.3.0] - 2025-04-01
+- *HELM Chart* has been updated for *HELM 3.17.2* and *Kubernetes 1.32.2*
+
 ## [2.1.3] - 2024-08-26
-### Changed
 - *HELM Chart* has been updated for *HELM 3.15.4* and *Kubernetes 1.30.2*
 
 ## [2.0.0] - 2024-06-03
-### Changed
 - **⚠ Breaking**: Application has been renamed from `SMConnector2Teams` to `SMConnector`.\
   Docker images from `sm-connector-to-teams` to `sm-connector`.
 
 ## [1.14.0] - 2024-02-27
-### Changed
 - *Docker Compose* container initialization was updated for Docker v25.0
-
-### Fixed
-- The *Docker Compose* healthcheck was fixed (regression from 1.12.0).
+- Fixed the *Docker Compose* healthcheck was fixed (regression from 1.12.0).
 
 ## [1.12.0] - 2023-12-01
-### Changed
 - *Docker Compose* and *HELM Chart* have been updated for running as **non-root** container. This includes a port number change.
 
 # Need support?
