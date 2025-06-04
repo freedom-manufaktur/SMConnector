@@ -8,6 +8,9 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  {{- if .Values.updateStrategy }}
+  strategy: {{- toYaml .Values.updateStrategy | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "sm-connector.selectorLabels" . | nindent 6 }}
