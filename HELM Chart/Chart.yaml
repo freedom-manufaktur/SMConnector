@@ -10,7 +10,7 @@ type: application
 #         Please use the most recent version available at https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR
 
 # Version of this Chart - https://helm.sh/docs/topics/charts/#charts-and-versioning
-version: 2.3.0
+version: 2.3.1
 # The version of the app that this contains (optional). - https://helm.sh/docs/topics/charts/#the-appversion-field
 appVersion: "2.3.0"
 
