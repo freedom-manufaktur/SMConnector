@@ -45,7 +45,7 @@ There are different kinds of installation. You may choose the one best suiting y
 
 **Installation**
 
-1.  Download Installation from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR)
+1.  Download Installation from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
 1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
@@ -116,7 +116,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 **Installation and Configuration**
 
-1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR) and register it with your image repository.
+1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
 1. Download the Docker Compose YAML files from [SMConnector Docker Compose Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/Docker%20Compose).
 
@@ -155,7 +155,7 @@ For example in Docker Desktop \
 
 **Installation and Configuration**
 
-1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR) and register it with your image repository.
+1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
 1. Download the HELM Chart files from [SMConnector HELM Chart Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/HELM%20Chart).
 
@@ -229,7 +229,7 @@ Depending on your environment, read either of the following documents:
 # What's new?
 This section lists **important** changes to the documentation and Docker files.
 Please read this list when upgrading an existing installation.
-> The full app changelog can be found in the [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBQ3lJ7BJrXECeTJ32JEhRsA?e=8vqyJR)
+> The full app changelog can be found in the [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
 
 ## [2.3.0] - 2025-04-01
 - *HELM Chart* has been updated for *HELM 3.17.2* and *Kubernetes 1.32.2*
