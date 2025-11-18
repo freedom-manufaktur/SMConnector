@@ -1,8 +1,8 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.3.0` - `2025-04-01` \
+Version: `2.5.0` - `2025-11-18` \
 Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
-Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector%20Installation%20Manual.md)
+Link: [Documentation on GitHub](<https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector Installation Manual.md>)
 
 Table of contents
 ---
@@ -14,6 +14,7 @@ Table of contents
 - [2. Register an App with Teams/Webex](#2-register-an-app-with-teamswebex)
 - [3. Install Ticket2Teams for USU Service Manager (USM)](#3-install-ticket2teams-for-usu-service-manager-usm)
 - [What's new?](#whats-new)
+  - [\[2.5.0\] - 2025-11-18](#250---2025-11-18)
   - [\[2.3.0\] - 2025-04-01](#230---2025-04-01)
   - [\[2.1.3\] - 2024-08-26](#213---2024-08-26)
   - [\[2.0.0\] - 2024-06-03](#200---2024-06-03)
@@ -46,11 +47,11 @@ There are different kinds of installation. You may choose the one best suiting y
 **Installation**
 
 1.  Download Installation from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
-1.  *(Optional, when offline*) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+1.  *(Optional, when offline*) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 2.3.0.exe`
-    > Note: This will automatically install .NET 8.0 if necessary
+1.	Install `SMConnector Setup 2.5.0.exe`
+    > Note: This will automatically install .NET 10.0 if necessary
 1.  (Optional, verify running) Open a browser and navigate to \
     http://localhost:8000 \
     You should be greeted with the message\
@@ -70,7 +71,7 @@ There are different kinds of installation. You may choose the one best suiting y
 
 **Upgrade an existing Installation**
 
-1.	(Optional, when Offline) Download and install the most recent [.NET 8.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+1.	(Optional, when Offline) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
     1.  ASP.NET Core Runtime x64 Installer
     1.	.NET Runtime x64 Installer
 1.	Install `SMConnector Setup vNext.exe` \
@@ -101,11 +102,11 @@ As seen in the example, the URL has been re-configured to use https://localhost:
 
 The installation creates a new Windows Service that should be running for the service to be available
 
-![Alt text](Images/Windows%20Service.png)
+![Windows Service](<Images/Windows Service.png>)
 
 The installation also creates a new Windows Event Log source `SMConnector`. Please start the *Event Viewer* or any other Event Log monitoring tool to view the application logs.
 
-![Alt text](Images/Windows%20Service%20Event%20Log.png)
+![Event Log](<Images/Windows Service Event Log.png>)
 
 ---
 
@@ -118,7 +119,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
-1. Download the Docker Compose YAML files from [SMConnector Docker Compose Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/Docker%20Compose).
+1. Download the Docker Compose YAML files from [SMConnector Docker Compose Download](<../Docker Compose>).
 
 1. Adjust the `compose.env` with the required settings.
    > Note: Read the following chapters if you do not have all the required information.
@@ -144,7 +145,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 Use your favorite Docker tools to check the status and logs of the app.
 For example in Docker Desktop \
-![Docker Compose Container Running](Images/Docker%20Compose%20Running.png)
+![Docker Compose Container Running](<Images/Docker Compose Running.png>)
 
 ---
 
@@ -157,7 +158,7 @@ For example in Docker Desktop \
 
 1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
-1. Download the HELM Chart files from [SMConnector HELM Chart Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/HELM%20Chart).
+1. Download the HELM Chart files from [SMConnector HELM Chart Download](<../HELM Chart>).
 
 1. Adjust the `values.yaml` with the required settings.
    > Note: Read the following chapters if you do not have all the required information.
@@ -197,12 +198,12 @@ For example in Docker Desktop \
 
 Use your favorite Docker tools to check the status and logs of the app.
 For example in Kubernetes Dashboard \
-![Docker Kubernetes Running](Images/Kubernetes%20Running.png)
+![Docker Kubernetes Running](<Images/Kubernetes Running.png>)
 
 # 2. Register an App with Teams/Webex
 Depending on your environment, read either of the following documents:
-- [Teams Registration Manual](Teams%20Registration%20Manual.md)
-- [Webex Registration Manual](Webex%20Registration%20Manual.md)
+- [Teams Registration Manual](<Teams Registration Manual.md>)
+- [Webex Registration Manual](<Webex Registration Manual.md>)
 
 # 3. Install Ticket2Teams for USU Service Manager (USM)
 1.  Follow the **Ticket2Teams** installation manual to install **Ticket2Teams** into your *USU Service Manager (USM)*.
@@ -210,7 +211,7 @@ Depending on your environment, read either of the following documents:
 2.  Finish entering all the required settings into your **Ticket2Teams configuration** UI.
     > Use the **URL** and **API key** password that we generated earlier here.
     
-    ![Ticket2Teams Configuration](Images/Ticket2Teams%20Configuration.png)
+    ![Ticket2Teams Configuration](<Images/Ticket2Teams Configuration.png>)
 
 3.  (Optional) Open a browser and enter the URL of **your** microservice and append `/healthcheck` \
     For example **`https://SMConnector.MyCompany.com/healthcheck`** \
@@ -230,6 +231,9 @@ Depending on your environment, read either of the following documents:
 This section lists **important** changes to the documentation and Docker files.
 Please read this list when upgrading an existing installation.
 > The full app changelog can be found in the [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
+
+## [2.5.0] - 2025-11-18
+- Replaced application setting `Api:EnableSwagger` with `Api:EnableOpenApiUi` and `/swagger` with `/scalar`. In Docker `EnableSwagger` has been replaced with `EnableOpenApiUi`.
 
 ## [2.3.0] - 2025-04-01
 - *HELM Chart* has been updated for *HELM 3.17.2* and *Kubernetes 1.32.2*

@@ -6,4 +6,4 @@ metadata:
     {{- include "sm-connector.labels" . | nindent 4 }}
 data:
   Api.EnableDetailedErrorMessages: {{ .Values.config.Api.EnableDetailedErrorMessages | quote }}
-  Api.EnableSwagger: {{ .Values.config.Api.EnableSwagger | quote }}
+  Api.EnableOpenApiUi: {{ .Values.config.Api.EnableOpenApiUi | quote }}
