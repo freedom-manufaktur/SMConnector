@@ -73,11 +73,11 @@ spec:
                 configMapKeyRef:
                   name: {{ include "sm-connector.fullname" . }}
                   key: Api.EnableDetailedErrorMessages
-            - name: Api__EnableSwagger
+            - name: Api__EnableOpenApiUi
               valueFrom:
                 configMapKeyRef:
                   name: {{ include "sm-connector.fullname" . }}
-                  key: Api.EnableSwagger
+                  key: Api.EnableOpenApiUi
             {{- if .Values.extraEnvVars }}
             {{- toYaml .Values.extraEnvVars | nindent 12 }}
             {{- end }}

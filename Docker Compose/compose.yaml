@@ -22,7 +22,7 @@ services: # https://docs.docker.com/compose/compose-file/05-services/
       test: [ "CMD", "/app/SMConnector", "--healthcheck", "http://localhost:8080/livenesscheck" ]
     environment:
       - Api:EnableDetailedErrorMessages=${Api_EnableDetailedErrorMessages}
-      - Api:EnableSwagger=${Api_EnableSwagger}
+      - Api:EnableOpenApiUi=${Api_EnableOpenApiUi}
 
 volumes: # https://docs.docker.com/compose/compose-file/07-volumes/
   app-data:
