@@ -1,7 +1,7 @@
 ﻿name: sm-connector
 
 services: # https://docs.docker.com/compose/compose-file/05-services/
-  init-app: # We change the owner of the "app-data" volume mount from "root" to "app" (1654) to enable writing to that volumne (Docker v25.0.3).
+  init-app: # We change the owner of the "app-data" volume mount from "root" to "app" (1654) to enable writing to that volume (Docker v25.0+).
     image: busybox:1.37.0
     volumes:
       - app-data:/app/data
@@ -27,5 +27,5 @@ services: # https://docs.docker.com/compose/compose-file/05-services/
 volumes: # https://docs.docker.com/compose/compose-file/07-volumes/
   app-data:
     driver: local # Use the Docker Desktop default https://docs.docker.com/compose/compose-file/07-volumes/#driver
-    # Inspect data here (Docker Desktop Windows):
-    # \\wsl$\docker-desktop-data\data\docker\volumes\sm-connector_app-data\_data
+    # Inspect data here (Docker Desktop Windows v4.48+):
+    # \\wsl.localhost\docker-desktop\mnt\docker-desktop-disk\data\docker\volumes\sm-connector_app-data\_data
