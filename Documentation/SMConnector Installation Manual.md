@@ -2,7 +2,7 @@
 ---
 Version: `2.5.0` - `2025-11-18` \
 Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
-Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector%20Installation%20Manual.md)
+Link: [Documentation on GitHub](<https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector Installation Manual.md>)
 
 Table of contents
 ---
@@ -102,11 +102,11 @@ As seen in the example, the URL has been re-configured to use https://localhost:
 
 The installation creates a new Windows Service that should be running for the service to be available
 
-![Alt text](Images/Windows%20Service.png)
+![Windows Service](<Images/Windows Service.png>)
 
 The installation also creates a new Windows Event Log source `SMConnector`. Please start the *Event Viewer* or any other Event Log monitoring tool to view the application logs.
 
-![Alt text](Images/Windows%20Service%20Event%20Log.png)
+![Event Log](<Images/Windows Service Event Log.png>)
 
 ---
 
@@ -119,7 +119,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
-1. Download the Docker Compose YAML files from [SMConnector Docker Compose Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/Docker%20Compose).
+1. Download the Docker Compose YAML files from [SMConnector Docker Compose Download](<../Docker Compose>).
 
 1. Adjust the `compose.env` with the required settings.
    > Note: Read the following chapters if you do not have all the required information.
@@ -145,7 +145,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 Use your favorite Docker tools to check the status and logs of the app.
 For example in Docker Desktop \
-![Docker Compose Container Running](Images/Docker%20Compose%20Running.png)
+![Docker Compose Container Running](<Images/Docker Compose Running.png>)
 
 ---
 
@@ -158,7 +158,7 @@ For example in Docker Desktop \
 
 1. Download the **sm-connector** Docker image from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh) and register it with your image repository.
 
-1. Download the HELM Chart files from [SMConnector HELM Chart Download](https://github.com/freedom-manufaktur/SMConnector/tree/main/HELM%20Chart).
+1. Download the HELM Chart files from [SMConnector HELM Chart Download](<../HELM Chart>).
 
 1. Adjust the `values.yaml` with the required settings.
    > Note: Read the following chapters if you do not have all the required information.
@@ -198,12 +198,12 @@ For example in Docker Desktop \
 
 Use your favorite Docker tools to check the status and logs of the app.
 For example in Kubernetes Dashboard \
-![Docker Kubernetes Running](Images/Kubernetes%20Running.png)
+![Docker Kubernetes Running](<Images/Kubernetes Running.png>)
 
 # 2. Register an App with Teams/Webex
 Depending on your environment, read either of the following documents:
-- [Teams Registration Manual](Teams%20Registration%20Manual.md)
-- [Webex Registration Manual](Webex%20Registration%20Manual.md)
+- [Teams Registration Manual](<Teams Registration Manual.md>)
+- [Webex Registration Manual](<Webex Registration Manual.md>)
 
 # 3. Install Ticket2Teams for USU Service Manager (USM)
 1.  Follow the **Ticket2Teams** installation manual to install **Ticket2Teams** into your *USU Service Manager (USM)*.
@@ -211,7 +211,7 @@ Depending on your environment, read either of the following documents:
 2.  Finish entering all the required settings into your **Ticket2Teams configuration** UI.
     > Use the **URL** and **API key** password that we generated earlier here.
     
-    ![Ticket2Teams Configuration](Images/Ticket2Teams%20Configuration.png)
+    ![Ticket2Teams Configuration](<Images/Ticket2Teams Configuration.png>)
 
 3.  (Optional) Open a browser and enter the URL of **your** microservice and append `/healthcheck` \
     For example **`https://SMConnector.MyCompany.com/healthcheck`** \
