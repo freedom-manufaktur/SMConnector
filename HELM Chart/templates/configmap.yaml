@@ -5,5 +5,5 @@ metadata:
   labels:
     {{- include "sm-connector.labels" . | nindent 4 }}
 data:
-  Api.EnableDetailedErrorMessages: {{ .Values.config.Api.EnableDetailedErrorMessages | quote }}
-  Api.EnableOpenApiUi: {{ .Values.config.Api.EnableOpenApiUi | quote }}
+  Api__EnableDetailedErrorMessages: {{ .Values.config.Api.EnableDetailedErrorMessages | quote }}
+  Api__EnableOpenApiUi: {{ .Values.config.Api.EnableOpenApiUi | quote }}
