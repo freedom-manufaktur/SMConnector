@@ -8,6 +8,7 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  # Add deployment strategy if defined in values.yaml
   {{- if .Values.updateStrategy }}
   strategy: {{- toYaml .Values.updateStrategy | nindent 4 }}
   {{- end }}
@@ -67,20 +68,13 @@ spec:
           readinessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "sm-connector.fullname" . }}
+          {{- if .Values.extraEnvVars }}
           env:
-            - name: Api__EnableDetailedErrorMessages
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ include "sm-connector.fullname" . }}
-                  key: Api.EnableDetailedErrorMessages
-            - name: Api__EnableOpenApiUi
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ include "sm-connector.fullname" . }}
-                  key: Api.EnableOpenApiUi
-            {{- if .Values.extraEnvVars }}
             {{- toYaml .Values.extraEnvVars | nindent 12 }}
-            {{- end }}
+          {{- end }}
           {{- with .Values.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
