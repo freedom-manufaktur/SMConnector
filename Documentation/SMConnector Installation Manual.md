@@ -1,6 +1,6 @@
 ﻿SMConnector - Microservice Installation Manual
 ---
-Version: `2.5.0` - `2025-11-18` \
+Version: `2.6.0` - `2026-02-17` \
 Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
 Link: [Documentation on GitHub](<https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/SMConnector Installation Manual.md>)
 
@@ -24,7 +24,7 @@ Table of contents
 <!--/TOC-->
 
 # 1. Microservice Installation
-There are different kinds of installation. You may choose the one best suiting your needs.
+There are different kinds of installation. You may choose the one best suited to your needs.
 - Windows Service \
    ✔ lightweight \
    ✔ easy to install, update and configure \
@@ -46,32 +46,37 @@ There are different kinds of installation. You may choose the one best suiting y
 
 **Installation**
 
-1.  Download Installation from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
-1.  *(Optional, when offline*) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+1.  Download the Installer from [SMConnector Download](https://freedommanufaktur.sharepoint.com/:f:/g/Ei5ui1vR2N5FkDdc6O7vxIwBLN8Y4porNsUg84T6mz9_ZQ?e=0wInwh)
+1.  (Optional, when offline) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
     1. ASP.NET Core Runtime x64 Installer
     2. .NET Runtime x64 Installer
-1.	Install `SMConnector Setup 2.5.0.exe`
+1.	Install `SMConnector Setup 2.6.0.exe`
     > Note: This will automatically install .NET 10.0 if necessary
-1.  (Optional, verify running) Open a browser and navigate to \
-    http://localhost:8000 \
-    You should be greeted with the message\
+
+1.  (Recommended) Configure HTTPS over TLS \
+    Unless you are using some kind of reverse proxy to expose SMConnector to the internet, you **should** secure your instance with TLS (SSL). \
+    Please follow the **[HTTPS Configuration Manual](<HTTPS Configuration Manual.md>)** and continue here.
+
+2.  (Optional) Open a browser and navigate to \
+    https://localhost:8000 \
+    You should be greeted with the message: \
     `Welcome to the SMConnector Microservice`
+
 1.	Allow inbound traffic to the service.
     > The default port used is `8000`. You may change the port number at any time.
-    - Use a Reverse Proxy, like IIS [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) to redirect traffic to port `8000`.
-        > This is the **recommended** option, as you can perform TLS/SSL termination before hitting the service and running the service in combination with other apps.
+    - Configure your Windows Firewall to allow inbound traffic on port `8000`.
 
     **OR**
 
-    - Configure your Windows Firewall to allow inbound traffic to port `8000`
-        > Note: You must bind a certificate to this port and use TLS/SSL (see *Configuration*).
+    - Use a Reverse Proxy, like IIS [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) to redirect traffic to port `8000`.
+      > You may use this option to perform TLS/SSL termination before hitting the service and running the service in combination with other apps.
 
-1.  As a result of the previous steps you should have a publically accessible and TLS secured endpoint like **https://SMConnector.MyCompany.com**. \
+2.  As a result of the previous steps you should have a publically accessible and TLS secured endpoint like **https://SMConnector.MyCompany.com**. \
     We will use this address in the next steps.
 
 **Upgrade an existing Installation**
 
-1.	(Optional, when Offline) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+1.	(Optional, when offline) Download and install the most recent [.NET 10.0 Runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
     1.  ASP.NET Core Runtime x64 Installer
     1.	.NET Runtime x64 Installer
 1.	Install `SMConnector Setup vNext.exe` \
@@ -95,7 +100,7 @@ Editing `appsettings.json` will show something like
   }
 }
 ```
-As seen in the example, the URL has been re-configured to use https://localhost:8443 as address and detailed error messages have been enabled. \
+As seen in the example, the URL has been re-configured to use https://localhost:8443 as the address and detailed error messages have been enabled. \
 *After changing `appsettings.json` you must restart the `SMConnector` Service.*
 
 **Monitoring / Debugging**
@@ -128,7 +133,7 @@ The installation also creates a new Windows Event Log source `SMConnector`. Plea
 
 1. (First time setup) When you install the application for the first time, it will **not** be considered healthy.\
    You must first configure the app via its configuration API. This is typically done via the **Ticket2Teams configuration** UI.\
-   To access the API you do need an **API key**, which you can aquire from the logs.\
+   To access the API you need an **API key**, which you can acquire from the logs.\
    Use any tool of your liking to view the application logs.\
    The application log should contain a text that reads
    ```
@@ -167,7 +172,7 @@ For example in Docker Desktop \
 
 1. (First time setup) When you install the application for the first time, it will **not** be considered healthy.\
    You must first configure the app via its configuration API. This is typically done via the **Ticket2Teams configuration** UI.\
-   To access the API you do need an **API key**, which you can aquire from the logs.\
+   To access the API you need an **API key**, which you can acquire from the logs.\
    Use the following commands or any tool of your liking to view the application logs.
    ```
    ### Get logs (Bash) ###
@@ -247,7 +252,7 @@ Please read this list when upgrading an existing installation.
 
 ## [1.14.0] - 2024-02-27
 - *Docker Compose* container initialization was updated for Docker v25.0
-- Fixed the *Docker Compose* healthcheck was fixed (regression from 1.12.0).
+- Fixed the *Docker Compose* healthcheck (regression from 1.12.0).
 
 ## [1.12.0] - 2023-12-01
 - *Docker Compose* and *HELM Chart* have been updated for running as **non-root** container. This includes a port number change.
