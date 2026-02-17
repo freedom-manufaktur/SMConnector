@@ -4,6 +4,7 @@ Contains documentation and setup scripts for the **SMConnector** as basis for **
 
 # Documentation
 - [SMConnector Installation](<Documentation/SMConnector Installation Manual.md>) 🚀 - Install SMConnector on your server or in your Docker environment.
+- [HTTPS Configuration](<Documentation/HTTPS Configuration Manual.md>) - How to configure HTTPS for SMConnector.
 
 ## Additional documentation
 - [Teams Registration](<Documentation/Teams Registration Manual.md>) - How to integrate with [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/).

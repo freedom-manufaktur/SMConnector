@@ -18,7 +18,7 @@ Table of contents
 # 1. Entra ID (Azure AD) Application registration
 To access your Entra ID without giving full access to everything inside your organization, Microsoft 
 provides a way to define an "Entra ID App". This App has a unique ID and Service Account, making 
-sure you only expose the information as much as needed for the Integration to work.
+sure you only expose as much information as needed for the Integration to work.
 
 1.  Open the [Entra ID - App registrations](https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType~/null/sourceType/Microsoft_AAD_IAM) portal.
 
@@ -35,19 +35,19 @@ sure you only expose the information as much as needed for the Integration to wo
     - `Chat.Create` (Delegated)\
       Allows the App to create new chats.
     - `Chat.ReadWrite` (Delegated)\
-    Allows the App to get information about a chat and change a chats topic.
+    Allows the App to get information about a chat and change a chat's topic.
     - `ChatMember.ReadWrite` (Delegated)\
-    Add and remove members to/from the chat.
+    Add and remove members to or from the chat.
     - `ChatMessage.Read` (Delegated)\
     Read the chat messages inside a chat.
     - `ChatMessage.Send` (Delegated)\
-    Send chat message to a chat.
+    Send a chat message to a chat.
     - `Files.Read.All` (Delegated)\
-    Allow access to files shared inside a chat. This is typically through the sharing users OneDrive.
+    Allow access to files shared inside a chat. This is typically through the sharing user's OneDrive.
     - `User.Read` (Delegated)\
     Get information about the Service Account user using the App.
     - `User.ReadBasic.All` (Delegated)\
-    Get information about chat members (other users) that should be added to /removed from a chat.
+    Get information about chat members (other users) that should be added to or removed from a chat.
 
     Once you have added the permissions, use **Grant admin consent for MyCompany** and make sure all permissions have admin consent.\
     ![App registration permissions](Images/Entra%20ID%20App%20registration%20Permissions.png)
@@ -55,13 +55,13 @@ sure you only expose the information as much as needed for the Integration to wo
 # 2. Prepare a service account
 The SMConnector works with delegated permissions. This means that we need an ordinary user that has the following preconditions:
 - You must know the username and password.
-- The user must has an active *Teams* license.
+- The user must have an active *Teams* license.
 - The user must be excluded from 2-factor-authentication.
   > There is a possible workaround to allow authentication for accounts that can't use username and password or must have 2FA. Please contact the support for assistance.
 
 ## Test the account
 - Open [Teams](https://teams.microsoft.com) in a private browser window
-- Sign in to Microsoft and make sure that you must **only** specify username and password, nothing else.
+- Sign in to Microsoft and make sure that you **only** specify username and password, nothing else.
 - Ensure that *Teams* can be used like any other user.
 
 ## Customize the account
