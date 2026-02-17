@@ -20,6 +20,7 @@ You need to acquire a valid TLS certificate for public internet access.
 > SMConnector provides public (internet accessible) endpoints, which allow users to view images and other attachments inside a chat. Intranet or self-signed certificates only provide a limited functionality.
 
 The acquired certificate should be available in the *Manage computer certificates* management console.
+
 ![Windows Certificates](<Images/Windows Certificates.png>)
 
 # 2. Set permissions
@@ -27,6 +28,7 @@ The acquired certificate should be available in the *Manage computer certificate
 
 1. Right click the certificate, select **All Tasks** → **Manage Private Keys...**.
 2. Add the user **LOCAL SERVICE** and allow **Read** access.
+
 ![Local Service certificate access](<Images/Windows Certificates Local Service.png>)
 
 # 3. Configure application settings
