@@ -1,6 +1,6 @@
 ﻿SMConnector - Microsoft Teams Registration Manual
 ---
-Version: `2.3.0` - `2024-10-28` \
+Version: `2.5.0` - `2026-02-26` \
 Author: [martin@freedom-manufaktur.com](mailto:martin@freedom-manufaktur.com) \
 Link: [Documentation on GitHub](https://github.com/freedom-manufaktur/SMConnector/tree/main/Documentation/Teams%20Registration%20Manual.md)
 
@@ -43,13 +43,16 @@ sure you only expose as much information as needed for the Integration to work.
     - `ChatMessage.Send` (Delegated)\
     Send a chat message to a chat.
     - `Files.Read.All` (Delegated)\
-    Allow access to files shared inside a chat. This is typically through the sharing user's OneDrive.
+    Allow access to files shared inside a chat. This is typically shared from the user's OneDrive.
+    - `Presence.Read.All` (Delegated)\
+    Read presence information of all users in your organization. This is used to mirror the presence information to your ITSM tool.
     - `User.Read` (Delegated)\
     Get information about the Service Account user using the App.
     - `User.ReadBasic.All` (Delegated)\
     Get information about chat members (other users) that should be added to or removed from a chat.
 
-    Once you have added the permissions, use **Grant admin consent for MyCompany** and make sure all permissions have admin consent.\
+    Once you have added the permissions, use **Grant admin consent for MyCompany** and make sure all permissions have admin consent.
+
     ![App registration permissions](Images/Entra%20ID%20App%20registration%20Permissions.png)
 
 # 2. Prepare a service account
